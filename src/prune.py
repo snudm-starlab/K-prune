@@ -1,6 +1,6 @@
 #############################################V#########################################
 # prune.py
-# - implementation of major functions of Kprune
+# - implementation of major functions of K-prune
 # - including knowledge measurement, knowledge-preserving mask search (KPMS),
 #   and knowledge-preserving weight-tuning (KPWT)
 #######################################################################################
@@ -16,7 +16,7 @@ def kprune(model, dataloader, IS_SQUAD, head_dim, lam_pred, lam_rep, mu, T,
               model_flops, f_head, f_neuron, head_masks, neuron_masks,
               constraint, sublayerwise_tuning, logger):
     """
-    a function for Kprune which includes knowledge measurement,
+    a function for K-prune which includes knowledge measurement,
     knowledge-preserving mask search (KPMS), snd knowledge-preserving pruning (KPP)
 
     * Inputs
@@ -35,7 +35,7 @@ def kprune(model, dataloader, IS_SQUAD, head_dim, lam_pred, lam_rep, mu, T,
        - neuron_masks: initialized masks for neurons
        - constraint: the ratio of FLOPs to be reduced 
        - sublayerwise_tuning: whether perform sub-layerwise tuning or not
-       - logger: logger for Kprune
+       - logger: logger for K-prune
     * Outputs:
        - model: a pruned model
        - head_masks: the found pruning masks for attention heads
