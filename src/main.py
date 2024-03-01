@@ -33,6 +33,8 @@ _data_logger = logging.getLogger("datasets.builder")
 _data_logger.setLevel(logging.ERROR)
 _data_logger = logging.getLogger("datasets.arrow_dataset")
 _data_logger.setLevel(logging.ERROR)
+import warnings
+warnings.filterwarnings('ignore')
 
 # Generate a new logger
 logger = logging.getLogger(__name__)
