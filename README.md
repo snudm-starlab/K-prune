@@ -1,13 +1,13 @@
 # Accurate Retraining-free Pruning for Pretrained Encoder-based Language Models
-This folder contains a PyTorch implemenation of Kprune.
+This folder contains a PyTorch implemenation of K-prune.
 ## Overview
-### Overview of Kprune
+### Overview of K-prune
 ![](images/overview.png)
-Kprune (Knowledge-preserving pruning) is an accurate retraining-free structured pruning algorithm for transformer-based 
+K-prune (Knowledge-preserving pruning) is an accurate retraining-free structured pruning algorithm for transformer-based 
 pre-trained language models (PLMs).
-The goal of Kprune is to maximize the accuracy of the compressed model by preserving the knowledge
+The goal of K-prune is to maximize the accuracy of the compressed model by preserving the knowledge
 of the PLM through a carefully designed iterative pruning process.
-The followings are the main ideas of Kprune.
+The followings are the main ideas of K-prune.
 
 **(a) Knowledge measurement.**
 We measure the importance of masked units using the amount of knowledge regarding 
@@ -31,7 +31,7 @@ This repository is written based on the codes in the [GitHub](https://github.com
 Here's an overview of our codes.
 
 ``` Unicode
-Kprune
+K-prune
   │
   ├──  src    
   │     ├── dataset
@@ -44,8 +44,8 @@ Kprune
   │     ├── utils
   │     │    ├── arch.py: codes for utility functions related to the architecture of the model
   │     │    └── capacity.py: codes for estimating the capacity of the model, such as FLOPs     
-  │     ├── main.py : codes for running Kprune 
-  │     └── prune.py: codes for pruning PLMs via Kprune 
+  │     ├── main.py : codes for running K-prune 
+  │     └── prune.py: codes for pruning PLMs via K-prune 
   │     
   ├──  scripts: a directory for script files
   │     └── run.sh : a script for running experiments  
@@ -85,7 +85,7 @@ Our code automatically downloads the dataset for the target task when you run ou
 You don't have to prepare the dataset manually.
 
 ## Running
-### Key arguments of Kprune
+### Key arguments of K-prune
 * ckpt_dir: a path for the directory that contains fine-tuned checkpoints
 * exp_name: the name of experiments for generating an output directory
 * task_name: the name of a task to run, e.g. mrpc, qqp, sst2, stsb, mnli, qnli, squad, or squad_v2
@@ -101,8 +101,8 @@ You don't have to prepare the dataset manually.
 * sublayerwise_tuning: whether perform layerwise tuning or not.
                        Remove the argument if you do not use sub-layerwise tuning.
 
-### A code for running Kprune
-The following code is an example of generating 50% compressed BERT using Kprune on MRPC.
+### A code for running K-prune
+The following code is an example of generating 50% compressed BERT using K-prune on MRPC.
 ```
 GPU=0
 TASK=mrpc
@@ -124,14 +124,14 @@ python src/main.py --model_name $MODEL --ckpt_dir $CKPT_DIR --exp_name $EXP_NAME
                   --lam_pred $LAM_PRED --lam_rep $LAM_REP --mu $MU --T $T \
                   --sublayerwise_tuning
 ```
-We provide the code for running Kprune as scripts/run.sh.
+We provide the code for running K-prune as scripts/run.sh.
 Run the script file as follows.
 ```
 bash scripts/run.sh
 ```
 
 ## Reference
-If you find Kprune useful or relevant to your research, please kindly cite our paper:
+If you find K-prune useful or relevant to your research, please kindly cite our paper:
 ```
 @inproceedings{park2023accurate,
   title={Accurate Retraining-free Pruning for Pretrained Encoder-based Language Models},
