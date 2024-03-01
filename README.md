@@ -130,7 +130,17 @@ Run the script file as follows.
 bash scripts/run.sh
 ```
 
-
 ## Reference
+If you find Kprune useful or relevant to your research, please kindly cite our paper:
+@inproceedings{park2023accurate,
+  title={Accurate Retraining-free Pruning for Pretrained Encoder-based Language Models},
+  author={Park, Seungcheol and Choi, Hojun and Kang, U},
+  booktitle={The Twelfth International Conference on Learning Representations},
+  year={2024}
+}
+
+## Related Projects
 * HuggingFace Transformers: https://github.com/huggingface/transformers
 * Kwon et al. (NeurIPS 22): https://github.com/WoosukKwon/retraining-free-pruning
+
+
