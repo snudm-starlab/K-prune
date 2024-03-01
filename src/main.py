@@ -1,6 +1,6 @@
 ###############################################################
 # main.py
-# - codes for running Kprune
+# - codes for running K-prune
 # - parsing arguments, loading data and model, and save results
 ###############################################################
 
@@ -58,11 +58,11 @@ parser.add_argument("--constraint", type=float, required=True,
                     help="FLOPs constraint, the percetange of FLOPs to remove",
                     )
 parser.add_argument("--seed", type=int, default=0)
-# For Kprune
+# For K-prune
 parser.add_argument("--sublayerwise_tuning", action='store_true', default=False,
                     help="whether use sub-layerwise tuning or not")
 parser.add_argument("--num_tokens", type=int, default=100000,
-                    help='the number of tokens to use for Kprune')
+                    help='the number of tokens to use for K-prune')
 parser.add_argument("--lam_pred", type=float, default=1.0,
                     help='a balance coefficient for predictive knowledge')
 parser.add_argument("--lam_rep", type=float, default=1e-5,
@@ -183,7 +183,7 @@ def main():
 
     st = time.time()
 
-    # Perform Kprune
+    # Perform K-prune
     # For each sub-layer do follows
     # (1) Knowledge measurement
     #    - Measure the amount of knowledge in the target and above sub-layers
@@ -201,7 +201,7 @@ def main():
                                                 args.constraint, args.sublayerwise_tuning, logger)
 
     pruning_time = time.time() - st
-    logger.info(f"Time for Kprune: {pruning_time:.3f}")
+    logger.info(f"Time for K-prune: {pruning_time:.3f}")
     # K-Pruning done
 
     # Get statistics of the pruned model
