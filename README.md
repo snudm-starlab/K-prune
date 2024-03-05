@@ -140,6 +140,9 @@ If you find K-prune useful or relevant to your research, please kindly cite our 
   year={2024}
 }
 ```
+## License
+This repository is for research purposes only. For any other purposes, please contact the authors.
+
 
 ## Related Projects
 * HuggingFace Transformers: https://github.com/huggingface/transformers
