@@ -132,7 +132,7 @@ bash scripts/run.sh
 
 ## Reference
 If you find K-prune useful or relevant to your research, please kindly cite our paper:
-```
+```bibtex
 @inproceedings{park2024accurate,
   title={Accurate Retraining-free Pruning for Pretrained Encoder-based Language Models},
   author={Park, Seungcheol and Choi, Hojun and Kang, U},
